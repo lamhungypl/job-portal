@@ -19,6 +19,9 @@
         <link rel="stylesheet" id="colors" href="./assets/css/cyan.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/color-switcher.css" type="text/css" />
         <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"></link>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
     </head>
     <body>
         <header id="home" class="hero-area">
@@ -768,14 +771,12 @@
                                         ></a>
                                     </li>
                                     <li>
-                                        <a class="linkedin" href="./login.html#"
-                                            ><i class="lni lni-linkedin-fill"></i
-                                        ></a>
+                                        <!-- Success message -->
+                                        <a class="btn btn-success" id="success"></a>
+                                        <!-- Error message -->
                                     </li>
                                     <li>
-                                        <a class="google-plus" href="./login.html#"
-                                            ><i class="lni lni-google-plus"></i
-                                        ></a>
+                                        <a id="error" class="btn btn-danger"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -843,5 +844,17 @@
         <script src="./assets/js/form-validator.min.js"></script>
         <script src="./assets/js./contact-form-script.js"></script>
         <script src="./assets/js/main.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#success").click(function () {
+                    alert("Hi! I am success message.");
+                    toastr.success("Hi! I am success message.");
+                });
+                $("#error").click(function(){
+                    alert("Hi! I am error message.");
+                   toastr.error('Hi! I am error message.');
+                })
+            });
+        </script>
     </body>
 </html>
